@@ -5,14 +5,14 @@ namespace RTSFramework
     /// </summary>
     public class ChangeRequestRequest : ChangeRequest
     {
-        public ChangeRequestRequest(int pipeline_depth, PrimitiveChange change, PrimitiveData target) : base( pipeline_depth, change, target ) { }
+        public ChangeRequestRequest(PrimitiveChange change, PrimitiveData target) : base( default, change, target ) { }
     }
     /// <summary>
     ///     Express a change that will add a new request to A <see cref="IAddable" />
     /// </summary>
     public class AddRequestRequest : AddRequest
     {
-        public AddRequestRequest(int pipeline_depth, Event _event, Request _target) : base( pipeline_depth )
+        public AddRequestRequest(Event _event, Request _target) : base( default )
         {
             this._event = _event;
             this._target = _target;

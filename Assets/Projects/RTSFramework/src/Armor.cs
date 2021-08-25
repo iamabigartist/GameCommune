@@ -5,30 +5,39 @@ namespace RTSFramework
     {
         int_data data;
         public int pipeline_depth => 10;
+
         float damage_reduction => data.value / (data.value + 100f);
 
-        public ChangeRequestRequest[] Evaluate(in Event e)
+        /// <summary>
+        ///     Generate Edit Requests for the event
+        /// </summary>
+        public
+            (ChangeRequestRequest[] changes,
+            AddRequestRequest[] adds)
+            Edit(in Event e)
         {
-            var physical_damages = e.requests.Where( (request) => request is PhysicalDamageRequest );
-            var requests = physical_damages.AsParallel().Select( (damage) => new ChangeRequestRequest()
-            {
-                change = new PrimitiveChange()
-                {
-                    change_type = PrimitiveChange.ChangeType.Multiply,
-                    data = new float_data( 1 - damage_reduction )
-                },
-                target = damage.change.data
-            } ).ToArray();
-            return requests;
+            var physical_damages =
+                e.requests.Select( (request) => request as PhysicalDamageRequest ).
+                    Where( (request) => request != null );
+            var changes = physical_damages.AsParallel().Select(
+                (damage) =>
+                    new ChangeRequestRequest(
+                        new PrimitiveChange(
+                            PrimitiveChange.ChangeType.Multiply,
+                            new float_data( 1 - damage_reduction ) ),
+                        damage.change.data ) ).ToArray();
+            return (changes, null);
         }
+
     }
 
     public class PhysicalDamageRequest : ChangeRequest
     {
-        public PhysicalDamageRequest(float_data HP, PrimitiveChange change)
-        {
-            target = HP;
-            this.change = change;
-        }
+        public PhysicalDamageRequest(int pipeline_depth, float damage, float_data target_HP) :
+            base( pipeline_depth,
+                new PrimitiveChange(
+                    PrimitiveChange.ChangeType.Add,
+                    new float_data( -damage ) ),
+                target_HP ) { }
     }
 }

@@ -1,8 +1,8 @@
 namespace RTSFramework
 {
-    public abstract class ChangeRequest : Request
+    public class ChangeRequest : Request
     {
-        protected ChangeRequest(int pipeline_depth, PrimitiveChange change, PrimitiveData target) : base( pipeline_depth )
+        public ChangeRequest(int pipeline_depth, PrimitiveChange change, PrimitiveData target) : base( pipeline_depth )
         {
             this.target = target;
             this.change = change;

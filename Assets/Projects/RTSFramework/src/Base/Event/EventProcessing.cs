@@ -16,22 +16,22 @@ namespace RTSFramework
                 case PrimitiveChange.ChangeType.Add:
                     {
                         float sum = primitive_changes.AsParallel().Aggregate( 0f, (s, change) => s + change.data.value );
-                        return new PrimitiveChange() { change_type = change_type, data = new float_data( sum ) };
+                        return new PrimitiveChange( change_type, new float_data( sum ) );
                     }
                 case PrimitiveChange.ChangeType.Multiply:
                     {
                         float product = primitive_changes.AsParallel().Aggregate( 1f, (s, change) => s * change.data.value );
-                        return new PrimitiveChange() { change_type = change_type, data = new float_data( product ) };
+                        return new PrimitiveChange( change_type, new float_data( product ) );
                     }
                 case PrimitiveChange.ChangeType.Flip:
                     {
                         bool flip = primitive_changes.AsParallel().Aggregate( false, (f, change) => !f );
-                        return new PrimitiveChange() { change_type = change_type, data = new float_data( flip ? 1 : 0 ) };
+                        return new PrimitiveChange( change_type, new float_data( flip ? 1 : 0 ) );
                     }
                 case PrimitiveChange.ChangeType.TurnOff:
                 case PrimitiveChange.ChangeType.TurnOn:
                     {
-                        return new PrimitiveChange() { change_type = change_type };
+                        return new PrimitiveChange( change_type, null );
                     }
                 default: throw new ArgumentOutOfRangeException( nameof(change_type), change_type, null );
             }
@@ -40,56 +40,90 @@ namespace RTSFramework
 
         /// <summary>
         /// </summary>
-        /// <param name="original_requests">any change request requests in one pipeline stage</param>
+        /// <param name="original_requests">any change request requests in one depth</param>
         /// <returns> reduced_requests that are all unique</returns>
-        static ChangeRequestRequest[] ReduceChangeRequests(ChangeRequestRequest[] original_requests)
+        static ChangeRequest[] ReduceChangeRequests(ChangeRequest[] original_requests, int depth)
         {
             return original_requests.GroupBy(
-                (request) => (request.target,request.pipeline_depth),
+                (request) => request.target,
                 (request) => request.change,
-                (target, changes) =>
+                (requests_index, changes) =>
                 {
                     var changes_array = changes.ToArray();
-                    return new ChangeRequestRequest()
-                    {
-                        change = ReducePrimitiveChanges( changes_array, changes_array[0].change_type ),
-                        target = target
-                    };
+                    return new ChangeRequest( depth,
+                        ReducePrimitiveChanges( changes_array, changes_array[0].change_type ),
+                        requests_index );
                 }
             ).ToArray();
         }
 
         /// <summary>
+        ///     Apply a bunch of unique requests in one pipeline depth
         /// </summary>
-        /// <param name="changes"></param>
-        static void ApplyUniqueRequestsOnEvent(ChangeRequestRequest[] changes, AddRequestRequest<Request>[] adds)
+        static void ProcessRequestsSingleDepth(in ChangeRequest[] changes, in AddRequest[] adds)
         {
-            Parallel.ForEach( changes, (request) => { request.Process(); } );
+            Parallel.ForEach( changes, (change) => { change.Process(); } );
             foreach (var add in adds) { add.Process(); }
         }
 
-        static void ModifyEvent(Event e)
+        /// <summary>
+        ///     Process normal requests will need to sort the depth first
+        /// </summary>
+        static void ProcessRequestsDepthGroups(Request[] origin_requests)
         {
-            foreach (IEditEvent[] stage_modifies in e.modifies)
+
+            //首先是分深度
+            //然后reduce 改变请求
+            //然后一个一个深度的处理请求
+
+            var requests_groups =
+                origin_requests.AsParallel().GroupBy(
+                    (request) => request.pipeline_depth,
+                    (depth, request) => request.ToArray() ).ToArray();
+            foreach (var requests in requests_groups)
             {
-                var event_requests =
-                    stage_modifies.AsParallel().Select( modify => modify.Edit( e ) ).ToArray();
-                var change_request_requests =
-                    event_requests.SelectMany( (tuple) => tuple.changes ).ToArray();
-                var add_request_requests =
-                    event_requests.SelectMany( (tuple) => tuple.adds ).ToArray();
-                change_request_requests = ReduceChangeRequests( change_request_requests );
-                ApplyUniqueRequestsOnEvent( change_request_requests, add_request_requests );
+                var changes_adds = requests.GroupBy( (request) => request is ChangeRequest ).ToArray();
+                var adds = changes_adds.FirstOrDefault( group => !group.Key )?.Select( (request) => request as AddRequest ).ToArray();
+                var changes = changes_adds.FirstOrDefault( group => group.Key )?.Select( (request) => request as ChangeRequest ).ToArray();
+                if (changes != null) { changes = ReduceChangeRequests( changes, changes[0].pipeline_depth ); }
+                ProcessRequestsSingleDepth( changes, adds );
+
             }
         }
 
-        /// <summary>
-        /// </summary>
-        /// <param name="e">the event being processed</param>
+        // static void ApplyRequestsSingleDepth(in Request[] requests)
+        // {
+        //     foreach (var request in requests) { request.Process(); }
+        // }
+        //
+        // static void ApplyRequests(in Request[] requests)
+        // {
+        //     //首先是分深度
+        //     //然后reduce请求
+        //     //然后一个一个深度的处理请求
+        //     (ChangeRequest[], AddRequest[])[] requests_depth_groups =
+        // }
+
+        static void BuildEvent(Event e)
+        {
+            foreach (IEditEvent[] editors in e.editors_depth_groups)
+            {
+                var event_edit_requests =
+                    editors.AsParallel().Select( modify => modify.Edit( e ) ).ToArray();
+                var change_request_requests =
+                    event_edit_requests.SelectMany( (tuple) => tuple.changes ).
+                        Select( (change) => change as ChangeRequest ).ToArray();
+                var add_request_requests =
+                    event_edit_requests.SelectMany( (tuple) => tuple.adds ).
+                        Select( (change) => change as AddRequest ).ToArray();
+                ProcessRequestsSingleDepth( change_request_requests, add_request_requests );
+            }
+        }
+
         public static void ProcessEvent(Event e)
         {
-            ModifyEvent(e);
-            for
+            BuildEvent( e );
+            ProcessRequestsDepthGroups( e.requests.ToArray() );
         }
     }
 }

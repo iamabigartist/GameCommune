@@ -20,7 +20,7 @@ namespace RTSFramework
         }
         public EventType type;
         public List<Request> requests;
-        public IEditEvent[][] modifies;
+        public IEditEvent[][] editors_depth_groups;
 
 
         public void Add(IAddable.IBeAddedable item) { requests.Add( item as Request ); }
