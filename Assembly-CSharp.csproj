@@ -52,13 +52,21 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Projects\RTSFramework\src\Base\Change\PrimitiveData.cs" />
+     <Compile Include="Assets\Projects\RTSFramework\src\Monster1.cs" />
+     <Compile Include="Assets\Projects\RTSFramework\src\Base\Event\Event.cs" />
+     <Compile Include="Assets\Projects\RTSFramework\src\Base\Change\PrimitiveChange.cs" />
+     <Compile Include="Assets\Projects\RTSFramework\src\Base\Event\IModifyChangeRequest.cs" />
      <Compile Include="Assets\URPExample\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\URPExample\Scripts\SimpleCameraController.cs" />
-     <Compile Include="Assets\Projects\RTSFramework\src\GameObject.cs" />
-     <Compile Include="Assets\Projects\RTSFramework\src\Data.cs" />
-     <Compile Include="Assets\Projects\RTSFramework\src\Modification.cs" />
-     <Compile Include="Assets\Projects\RTSFramework\src\Event.cs" />
-     <Compile Include="Assets\Projects\RTSFramework\src\Effect.cs" />
+     <Compile Include="Assets\Projects\RTSFramework\src\Base\Event\EventProcessing.cs" />
+     <Compile Include="Assets\Projects\RTSFramework\src\Base\Request\ChangeRequest.cs" />
+     <Compile Include="Assets\Projects\RTSFramework\src\Vayne.cs" />
+     <Compile Include="Assets\Projects\RTSFramework\src\Base\Control\IFrameUpdate.cs" />
+     <Compile Include="Assets\Projects\RTSFramework\src\EventSystem1.cs" />
+     <Compile Include="Assets\Projects\RTSFramework\src\Armor.cs" />
+     <Compile Include="Assets\Projects\RTSFramework\src\Base\Request\AddRequest.cs" />
+     <Compile Include="Assets\Projects\RTSFramework\src\Base\Request\Request.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity 2020.3.12f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
