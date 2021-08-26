@@ -4,7 +4,11 @@ namespace RTSFramework
     public class Armor : IEditEvent
     {
         int_data data;
-        public int pipeline_depth => 10;
+
+        public SubPipelineTag subpipeline_tag
+        {
+            get;
+        }
 
         float damage_reduction => data.value / (data.value + 100f);
 
@@ -21,7 +25,7 @@ namespace RTSFramework
                     Where( (request) => request != null );
             var changes = physical_damages.AsParallel().Select(
                 (damage) =>
-                    new ChangeRequestRequest(
+                    new ChangeRequestRequest( "Process",
                         new PrimitiveChange(
                             PrimitiveChange.ChangeType.Multiply,
                             new float_data( 1 - damage_reduction ) ),
@@ -29,12 +33,13 @@ namespace RTSFramework
             return (changes, null);
         }
 
+
     }
 
     public class PhysicalDamageRequest : ChangeRequest
     {
-        public PhysicalDamageRequest(int pipeline_depth, float damage, float_data target_HP) :
-            base( pipeline_depth,
+        public PhysicalDamageRequest(string subpipeline_name, float damage, float_data target_HP) :
+            base( subpipeline_name,
                 new PrimitiveChange(
                     PrimitiveChange.ChangeType.Add,
                     new float_data( -damage ) ),

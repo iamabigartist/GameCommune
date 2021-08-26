@@ -1,9 +1,9 @@
 namespace RTSFramework
 {
-    public abstract class Request : IAddable.IBeAddedable
+    public abstract class Request : IAddable.IBeAddedable, IInPipelineStage
     {
-        protected Request(int pipeline_depth) { this.pipeline_depth = pipeline_depth; }
-        public int pipeline_depth { get; }
+        protected Request(string subpipeline_name) { subpipeline_tag = new SubPipelineTag( subpipeline_name ); }
+        public SubPipelineTag subpipeline_tag { get; }
         public abstract void Process();
     }
 }

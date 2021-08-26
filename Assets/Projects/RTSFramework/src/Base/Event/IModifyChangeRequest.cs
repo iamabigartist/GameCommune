@@ -5,14 +5,15 @@ namespace RTSFramework
     /// </summary>
     public class ChangeRequestRequest : ChangeRequest
     {
-        public ChangeRequestRequest(PrimitiveChange change, PrimitiveData target) : base( default, change, target ) { }
+        public ChangeRequestRequest(string subpipeline_name, PrimitiveChange change, PrimitiveData target) :
+            base( subpipeline_name, change, target ) { }
     }
     /// <summary>
     ///     Express a change that will add a new request to A <see cref="IAddable" />
     /// </summary>
     public class AddRequestRequest : AddRequest
     {
-        public AddRequestRequest(Event _event, Request _target) : base( default )
+        public AddRequestRequest(string subpipeline_name, Event _event, Request _target) : base( subpipeline_name )
         {
             this._event = _event;
             this._target = _target;
@@ -22,9 +23,8 @@ namespace RTSFramework
         public override IAddable.IBeAddedable item => _target;
         Request _target;
     }
-    public interface IEditEvent
+    public interface IEditEvent : IInPipelineStage
     {
-        public int pipeline_depth { get; }
         public (ChangeRequestRequest[] changes, AddRequestRequest[] adds) Edit(in Event e);
     }
 }

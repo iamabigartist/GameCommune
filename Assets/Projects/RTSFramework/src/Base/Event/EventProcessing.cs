@@ -42,7 +42,7 @@ namespace RTSFramework
         /// </summary>
         /// <param name="original_requests">any change request requests in one depth</param>
         /// <returns> reduced_requests that are all unique</returns>
-        static ChangeRequest[] ReduceChangeRequests(ChangeRequest[] original_requests, int depth)
+        static ChangeRequest[] ReduceChangeRequests(ChangeRequest[] original_requests, string subpipeline_name)
         {
             return original_requests.GroupBy(
                 (request) => request.target,
@@ -50,7 +50,7 @@ namespace RTSFramework
                 (requests_index, changes) =>
                 {
                     var changes_array = changes.ToArray();
-                    return new ChangeRequest( depth,
+                    return new ChangeRequest( subpipeline_name,
                         ReducePrimitiveChanges( changes_array, changes_array[0].change_type ),
                         requests_index );
                 }
@@ -78,14 +78,14 @@ namespace RTSFramework
 
             var requests_groups =
                 origin_requests.AsParallel().GroupBy(
-                    (request) => request.pipeline_depth,
+                    (request) => request.subpipeline_tag,
                     (depth, request) => request.ToArray() ).ToArray();
             foreach (var requests in requests_groups)
             {
                 var changes_adds = requests.GroupBy( (request) => request is ChangeRequest ).ToArray();
                 var adds = changes_adds.FirstOrDefault( group => !group.Key )?.Select( (request) => request as AddRequest ).ToArray();
                 var changes = changes_adds.FirstOrDefault( group => group.Key )?.Select( (request) => request as ChangeRequest ).ToArray();
-                if (changes != null) { changes = ReduceChangeRequests( changes, changes[0].pipeline_depth ); }
+                if (changes != null) { changes = ReduceChangeRequests( changes, changes[0].subpipeline_tag.subpipeline_name ); }
                 ProcessRequestsSingleDepth( changes, adds );
 
             }
