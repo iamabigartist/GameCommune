@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 namespace RTSFramework
 {
-    public class Event : IAddable
+    public class Effect : IAddable
     {
-        public enum EventType
+        public enum EffectType
         {
             /// <summary>
             ///     The event will remain and be processed.
@@ -18,9 +18,9 @@ namespace RTSFramework
             /// </summary>
             Temporary
         }
-        public EventType type;
+        public EffectType type;
         public List<Request> requests;
-        public IEditEvent[][] editors_depth_groups;
+        public IEditEffect[][] editors_depth_groups;
 
 
         public void Add(IAddable.IBeAddedable item) { requests.Add( item as Request ); }

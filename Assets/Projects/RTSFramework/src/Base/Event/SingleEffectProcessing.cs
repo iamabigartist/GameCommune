@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 namespace RTSFramework
 {
-    public static class EventProcessing
+    public static class SingleEffectProcessing
     {
         static PrimitiveChange ReducePrimitiveChanges(PrimitiveChange[] primitive_changes, PrimitiveChange.ChangeType change_type)
         {
@@ -104,9 +104,9 @@ namespace RTSFramework
         //     (ChangeRequest[], AddRequest[])[] requests_depth_groups =
         // }
 
-        static void BuildEvent(Event e)
+        static void BuildEffect(Effect e)
         {
-            foreach (IEditEvent[] editors in e.editors_depth_groups)
+            foreach (IEditEffect[] editors in e.editors_depth_groups)
             {
                 var event_edit_requests =
                     editors.AsParallel().Select( modify => modify.Edit( e ) ).ToArray();
@@ -120,9 +120,9 @@ namespace RTSFramework
             }
         }
 
-        public static void ProcessEvent(Event e)
+        public static void ProcessEffect(Effect e)
         {
-            BuildEvent( e );
+            BuildEffect( e );
             ProcessRequestsDepthGroups( e.requests.ToArray() );
         }
     }

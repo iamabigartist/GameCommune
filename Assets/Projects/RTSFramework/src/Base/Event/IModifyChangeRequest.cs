@@ -13,18 +13,18 @@ namespace RTSFramework
     /// </summary>
     public class AddRequestRequest : AddRequest
     {
-        public AddRequestRequest(string subpipeline_name, Event _event, Request _target) : base( subpipeline_name )
+        public AddRequestRequest(string subpipeline_name, Effect _effect, Request _target) : base( subpipeline_name )
         {
-            this._event = _event;
+            this._effect = _effect;
             this._target = _target;
         }
-        public override IAddable target => _event;
-        Event _event;
+        public override IAddable target => _effect;
+        Effect _effect;
         public override IAddable.IBeAddedable item => _target;
         Request _target;
     }
-    public interface IEditEvent : IInPipelineStage
+    public interface IEditEffect : IInPipelineStage
     {
-        public (ChangeRequestRequest[] changes, AddRequestRequest[] adds) Edit(in Event e);
+        public (ChangeRequestRequest[] changes, AddRequestRequest[] adds) Edit(in Effect e);
     }
 }

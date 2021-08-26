@@ -1,15 +1,15 @@
 using System.Linq;
 namespace RTSFramework
 {
-    public class Armor : IEditEvent
+    public class Armor : IEditEffect
     {
-        int_data data;
-
-        public SubPipelineTag subpipeline_tag
+        public SubPipelineTag subpipeline_tag { get; }
+        public Armor()
         {
-            get;
+            subpipeline_tag = new SubPipelineTag( "Process" );
         }
 
+        int_data data;
         float damage_reduction => data.value / (data.value + 100f);
 
         /// <summary>
@@ -18,7 +18,7 @@ namespace RTSFramework
         public
             (ChangeRequestRequest[] changes,
             AddRequestRequest[] adds)
-            Edit(in Event e)
+            Edit(in Effect e)
         {
             var physical_damages =
                 e.requests.Select( (request) => request as PhysicalDamageRequest ).

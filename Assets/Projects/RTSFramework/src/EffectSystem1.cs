@@ -3,36 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace RTSFramework
 {
-    public class EventSystem1 : MonoBehaviour
+    public class EffectSystem1 : MonoBehaviour
     {
-        static EventSystem1()
+        static EffectSystem1()
         {
-            frame_events = new List<Event>();
+            frame_effects = new List<Effect>();
         }
 
-        public static List<Event> frame_events;
+        public static List<Effect> frame_effects;
 
-        // Update is called once per frame
         void Update()
         {
-            foreach (Event e in frame_events)
+            foreach (Effect e in frame_effects)
             {
                 switch (e.type)
                 {
 
-                    case Event.EventType.Enabled:
+                    case Effect.EffectType.Enabled:
                         {
-                            EventProcessing.ProcessEvent( e );
+                            SingleEffectProcessing.ProcessEffect( e );
                             break;
                         }
-                    case Event.EventType.Disabled:
+                    case Effect.EffectType.Disabled:
                         {
                             break;
                         }
-                    case Event.EventType.Temporary:
+                    case Effect.EffectType.Temporary:
                         {
-                            EventProcessing.ProcessEvent( e );
-                            frame_events.Remove( e );
+                            SingleEffectProcessing.ProcessEffect( e );
+                            frame_effects.Remove( e );
                             break;
                         }
                     default: throw new ArgumentOutOfRangeException();
