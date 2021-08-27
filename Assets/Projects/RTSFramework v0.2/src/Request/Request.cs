@@ -21,7 +21,7 @@ namespace RTSFramework_v02
         /// </summary>
         public abstract bool AbleToReduce<TRequest>(TRequest another_request)
             where TRequest : Request;
-        
+
         /// <summary>
         ///     Merge this request with a group of requests that <see cref="AbleToReduce{TRequest}" /> with this request.
         /// </summary>

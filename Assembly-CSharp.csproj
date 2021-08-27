@@ -68,14 +68,15 @@
      <Compile Include="Assets\Projects\RTSFramework v0.1\src\Vayne.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.1\src\Base\Request\ChangeRequest.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.1\src\EffectSystem1.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v0.2\src\PrimitiveData\PrimitiveChange.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v0.2\src\PrimitiveData\PrimitiveData.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0.2\src\Data\PrimitiveChange.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0.2\src\Data\PrimitiveData.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.2\src\DataManagement\ReferenceList.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.2\src\Request\Request.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.2\src\Pipeline\PipelineTag.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.2\src\Pipeline\IInPipelineStage.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.2\src\Pipeline\IInPipelineStageLists.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.2\src\Pipeline\GamePipelineTable.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0.2\src\Data\modified_float_data.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.12f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

@@ -2,7 +2,7 @@ using System;
 namespace RTSFramework_v02
 {
     /// <summary>
-    ///     The basic data component
+    ///     The basic data that can be changed by a <see cref="PrimitiveChange" />
     /// </summary>
     public abstract class PrimitiveData
     {
