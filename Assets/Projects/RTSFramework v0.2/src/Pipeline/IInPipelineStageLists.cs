@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-namespace RTSFramework_v01
+namespace RTSFramework_v02
 {
     public class IInPipelineStageLists<TElement> where TElement : IInPipelineStage
     {

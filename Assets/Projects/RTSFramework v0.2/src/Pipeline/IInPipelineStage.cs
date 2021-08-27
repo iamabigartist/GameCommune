@@ -1,4 +1,4 @@
-namespace RTSFramework_v01
+namespace RTSFramework_v02
 {
     public interface IInPipelineStage
     {

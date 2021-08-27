@@ -3,10 +3,10 @@ namespace RTSFramework_v01
 {
     public class Armor : IEditEffect
     {
-        public SubPipelineTag subpipeline_tag { get; }
+        public PipelineTag pipeline_tag { get; }
         public Armor()
         {
-            subpipeline_tag = new SubPipelineTag( "Process" );
+            pipeline_tag = new PipelineTag( "Process" );
         }
 
         int_data data;

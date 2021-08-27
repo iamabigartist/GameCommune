@@ -56,7 +56,7 @@
      <Compile Include="Assets\Projects\RTSFramework v0.1\src\Base\Request\Request.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.1\src\Base\Pipeline\IInPipelineStageLists.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.1\src\Base\Request\AddRequest.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v0.1\src\Base\Pipeline\SubPipelineTag.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0.1\src\Base\Pipeline\PipelineTag.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.1\src\Base\Event\EffectProcessing.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.1\src\Base\Event\Effect.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.1\src\Base\Pipeline\IInPipelineStage.cs" />
@@ -72,6 +72,10 @@
      <Compile Include="Assets\Projects\RTSFramework v0.2\src\PrimitiveData\PrimitiveData.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.2\src\DataManagement\ReferenceList.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0.2\src\Request\Request.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0.2\src\Pipeline\PipelineTag.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0.2\src\Pipeline\IInPipelineStage.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0.2\src\Pipeline\IInPipelineStageLists.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0.2\src\Pipeline\GamePipelineTable.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.12f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

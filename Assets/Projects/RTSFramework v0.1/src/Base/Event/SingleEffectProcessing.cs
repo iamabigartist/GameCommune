@@ -78,14 +78,14 @@ namespace RTSFramework_v01
 
             var requests_groups =
                 origin_requests.AsParallel().GroupBy(
-                    (request) => request.subpipeline_tag,
+                    (request) => request.pipeline_tag,
                     (depth, request) => request.ToArray() ).ToArray();
             foreach (var requests in requests_groups)
             {
                 var changes_adds = requests.GroupBy( (request) => request is ChangeRequest ).ToArray();
                 var adds = changes_adds.FirstOrDefault( group => !group.Key )?.Select( (request) => request as AddRequest ).ToArray();
                 var changes = changes_adds.FirstOrDefault( group => group.Key )?.Select( (request) => request as ChangeRequest ).ToArray();
-                if (changes != null) { changes = ReduceChangeRequests( changes, changes[0].subpipeline_tag.subpipeline_name ); }
+                if (changes != null) { changes = ReduceChangeRequests( changes, changes[0].pipeline_tag.pipeline_name ); }
                 ProcessRequestsSingleDepth( changes, adds );
 
             }
