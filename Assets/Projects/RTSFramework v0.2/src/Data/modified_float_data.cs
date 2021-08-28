@@ -1,6 +1,10 @@
 using RTSFramework_v02;
 namespace NAMESPACE
 {
+    /// <summary>
+    ///     A practical float data type that allow to be fine-grained edited and will provide a final <see cref="value" />
+    ///     after modification.
+    /// </summary>
     public class modified_float_data
     {
         public modified_float_data(float basic_value, float mul_bonus_value, float add_bonus_value)
@@ -41,6 +45,7 @@ namespace NAMESPACE
                 refresh_value();
             }
         }
+
         /// <summary>
         ///     The bonus value based on a ratio of the basic value
         /// </summary>
@@ -53,6 +58,7 @@ namespace NAMESPACE
                 refresh_value();
             }
         }
+
         /// <summary>
         ///     The bonus value added
         /// </summary>

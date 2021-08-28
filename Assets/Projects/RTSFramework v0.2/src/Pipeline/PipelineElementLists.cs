@@ -1,9 +1,17 @@
 using System.Collections.Generic;
 namespace RTSFramework_v02
 {
-    public class IInPipelineStageLists<TElement> where TElement : IInPipelineStage
+    /// <summary>
+    ///     A group of lists that store <see cref="TElement" />s of different pipeline stage.
+    /// </summary>
+    /// <remarks>
+    ///     The pipeline stages number must be fixed by the <see cref="GamePipelineTable" /> before this
+    ///     <see cref="PipelineElementLists{TElement}" /> construct,
+    ///     and it can't be changed at runtime.
+    /// </remarks>
+    public class PipelineElementLists<TElement> where TElement : IInPipelineStage
     {
-        public IInPipelineStageLists()
+        public PipelineElementLists()
         {
             lists = new List<TElement>[GamePipelineTable.StageCount];
             for (int i = 0; i < lists.Length; i++) { lists[i] = new List<TElement>(); }
