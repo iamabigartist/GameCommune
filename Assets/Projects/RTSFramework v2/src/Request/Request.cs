@@ -2,7 +2,7 @@ using RTSFramework_v2.Pipeline;
 namespace RTSFramework_v2.Request
 {
     /// <summary>
-    /// An apply for the change of data, must be merged before excute
+    ///     An apply for the change of data, must be merged before excute
     /// </summary>
     public abstract class Request : IInPipelineStage
     {
@@ -20,13 +20,12 @@ namespace RTSFramework_v2.Request
         /// <summary>
         ///     Judge whether <see cref="another_request" /> is able to be merged with this requests
         /// </summary>
-        public abstract bool AbleToReduce<TRequest>(TRequest another_request)
-            where TRequest : Request;
+        public abstract bool AbleToReduce(Request another_request);
 
-        /// <summary>
-        ///     Merge this request with a group of requests that <see cref="AbleToReduce{TRequest}" /> with this request.
-        /// </summary>
-        /// <returns>A new request that is produced by the reduction of previous requests</returns>
-        public virtual Request ReduceRequests(Request[] requests) { return this; }
+        // /// <summary>
+        // ///     Merge this request with a group of requests that <see cref="AbleToReduce{TRequest}" /> with this request.
+        // /// </summary>
+        // /// <returns>A new request that is produced by the reduction of previous requests</returns>
+        // public virtual Request ReduceRequests(Request[] requests) { return this; }
     }
 }

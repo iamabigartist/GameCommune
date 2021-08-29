@@ -37,6 +37,7 @@ namespace RTSFramework_v1
                             PrimitiveChange.ChangeType.Multiply,
                             new float_data( 1 - damage_reduction ) ),
                         damage.change.data ) ).ToArray();
+
             return (changes, null);
         }
 

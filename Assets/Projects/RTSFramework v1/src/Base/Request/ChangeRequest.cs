@@ -3,7 +3,7 @@ namespace RTSFramework_v1.Base.Request
 {
     public class ChangeRequest : Request
     {
-        public ChangeRequest(string subpipeline_name, PrimitiveChange change, PrimitiveData target) : base( subpipeline_name )
+        public ChangeRequest(string pipeline_name, PrimitiveChange change, PrimitiveData target) : base( pipeline_name )
         {
             this.target = target;
             this.change = change;
