@@ -84,6 +84,10 @@
      <Compile Include="Assets\Projects\RTSFramework v1_0\Pipeline\GamePipelineTable.cs" />
      <Compile Include="Assets\Projects\RTSFramework v1_0\Pipeline\PipelineTag.cs" />
      <Compile Include="Assets\Projects\RTSFramework v1_0\Pipeline\PipelineElementLists.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v1_0\DataBase\PrimitiveField.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v1_0\DataBase\PrimitiveUpdateRequest.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v1_0\DataBase\ICDable.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v1_0\DataBase\PrimitiveCDRequest.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.12f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.dll</HintPath>
  </Reference>

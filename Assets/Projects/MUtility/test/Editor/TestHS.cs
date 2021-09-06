@@ -25,8 +25,8 @@ namespace MUtility.test.Editor
             heap_data = new float_data() { value = 1 };
             tester_heap_float = new TestUtility.FunctionTester( () =>
             {
-                // heap_data.value += 1;
-                // heap_data.value -= 1;
+                // heap_data.stage += 1;
+                // heap_data.stage -= 1;
                 heap_data.value *= 3.1415926f;
                 heap_data.value /= 3.141526f;
             }, "float in heap" );

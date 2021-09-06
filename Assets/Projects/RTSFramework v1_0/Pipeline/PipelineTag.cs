@@ -5,13 +5,11 @@ namespace RTSFramework_v1_0.Pipeline
     /// </summary>
     public readonly struct PipelineTag
     {
-        public string pipeline_name { get; }
-        public int value { get; }
+        public int stage { get; }
 
         public PipelineTag(string pipeline_name)
         {
-            this.pipeline_name = pipeline_name;
-            value = GamePipelineTable.GetPipelineStage( this.pipeline_name );
+            stage = GamePipelineTable.GetPipelineStage( pipeline_name );
         }
     }
 

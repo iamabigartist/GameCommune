@@ -17,7 +17,7 @@ namespace RTSFramework_v0_2.src.Data
         float_data _basic, _mul_bonus, _add_bonus;
 
         /// <summary>
-        ///     The final calculated value
+        ///     The final calculated stage
         /// </summary>
         public float value
         {
@@ -33,7 +33,7 @@ namespace RTSFramework_v0_2.src.Data
         }
 
         /// <summary>
-        ///     The basic value of this data
+        ///     The basic stage of this data
         /// </summary>
         public float_data basic
         {
@@ -46,7 +46,7 @@ namespace RTSFramework_v0_2.src.Data
         }
 
         /// <summary>
-        ///     The bonus value based on a ratio of the basic value
+        ///     The bonus stage based on a ratio of the basic stage
         /// </summary>
         public float_data mul_bonus
         {
@@ -59,7 +59,7 @@ namespace RTSFramework_v0_2.src.Data
         }
 
         /// <summary>
-        ///     The bonus value added
+        ///     The bonus stage added
         /// </summary>
         public float_data add_bonus
         {

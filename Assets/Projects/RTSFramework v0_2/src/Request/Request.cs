@@ -2,7 +2,7 @@ using RTSFramework_v0_2.src.Pipeline;
 namespace RTSFramework_v0_2.src.Request
 {
     /// <summary>
-    ///     An apply for the change of data, must be merged before excute
+    ///     An apply for the change of data, must be merged before execute
     /// </summary>
     public abstract class Request : IInPipelineStage
     {

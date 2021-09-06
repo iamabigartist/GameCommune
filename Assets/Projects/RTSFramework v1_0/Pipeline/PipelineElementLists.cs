@@ -30,12 +30,12 @@ namespace RTSFramework_v1_0.Pipeline
 
         public void Add(TElement element)
         {
-            this[element.pipeline_tag.value].Add( element );
+            this[element.pipeline_tag.stage].Add( element );
 
         }
         public bool Remove(TElement element)
         {
-            return this[element.pipeline_tag.value].Remove( element );
+            return this[element.pipeline_tag.stage].Remove( element );
         }
     }
 }

@@ -24,6 +24,9 @@ namespace RTSFramework_v0_2.src.DataManagement
             listened_ref_list.Remove( data );
         }
 
+        void RemoveListenedHandler(object data, EventArgs args)
+        { RemoveListened( data as TData ); }
+
         public void AddListened(TData data)
         {
             var remove = new EventHandler( RemoveListenedHandler );
@@ -32,7 +35,7 @@ namespace RTSFramework_v0_2.src.DataManagement
             listened_ref_list.Add( data );
         }
 
-        void RemoveListenedHandler(object data, EventArgs args) { RemoveListened( data as TData ); }
+
 
     #endregion
 

@@ -29,7 +29,7 @@ namespace RTSFramework_v1_0.Pipeline
         static Dictionary<int, int> depth_to_stage;
 
         /// <summary>
-        ///     Provide stage number according to a depth name.
+        ///     Provide stage number according to a stage name.
         /// </summary>
         static Dictionary<string, int> name_to_stage;
 
@@ -45,7 +45,7 @@ namespace RTSFramework_v1_0.Pipeline
                 depths.Add( keyValuePair.Value );
             }
 
-            //Construct depth to stage
+            //Construct stage to stage
             depth_to_stage = depths.
                 Select( (depth, index) => (depth, index) ).
                 ToDictionary( (pair) => pair.depth, (pair) => pair.index );

@@ -4,7 +4,7 @@ using RTSFramework_v0_1.src.Base.Request;
 namespace RTSFramework_v0_1.src.Base.Event
 {
     /// <summary>
-    ///     Express a change to a value of a existing request
+    ///     Express a change to a stage of a existing request
     /// </summary>
     public class ChangeRequestRequest : ChangeRequest
     {

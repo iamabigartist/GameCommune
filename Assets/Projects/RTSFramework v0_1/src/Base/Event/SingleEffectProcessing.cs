@@ -42,7 +42,7 @@ namespace RTSFramework_v0_1.src.Base.Event
 
         /// <summary>
         /// </summary>
-        /// <param name="original_requests">any change request requests in one depth</param>
+        /// <param name="original_requests">any change request requests in one stage</param>
         /// <returns> reduced_requests that are all unique</returns>
         static ChangeRequest[] ReduceChangeRequests(ChangeRequest[] original_requests, string subpipeline_name)
         {
@@ -60,7 +60,7 @@ namespace RTSFramework_v0_1.src.Base.Event
         }
 
         /// <summary>
-        ///     Apply a bunch of unique requests in one pipeline depth
+        ///     Apply a bunch of unique requests in one pipeline stage
         /// </summary>
         static void ProcessRequestsSingleDepth(in ChangeRequest[] changes, in AddRequest[] adds)
         {
@@ -69,7 +69,7 @@ namespace RTSFramework_v0_1.src.Base.Event
         }
 
         /// <summary>
-        ///     Process normal requests will need to sort the depth first
+        ///     Process normal requests will need to sort the stage first
         /// </summary>
         static void ProcessRequestsDepthGroups(Request.Request[] origin_requests)
         {
