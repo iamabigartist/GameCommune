@@ -53,8 +53,8 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Projects\MUtility\test\Editor\TestUtility.cs" />
-     <Compile Include="Assets\Projects\MUtility\test\Editor\TestHS.cs" />
      <Compile Include="Assets\Projects\MUtility\test\Editor\TestersWindow.cs" />
+     <Compile Include="Assets\Projects\MUtility\test\Editor\TestHS.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.12f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

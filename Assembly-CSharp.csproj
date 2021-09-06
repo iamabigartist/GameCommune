@@ -52,34 +52,38 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Projects\RTSFramework v2\src\DataManagement\ReferenceList.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v2\src\Data\modified_float_data.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Base\Change\PrimitiveData.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Base\Request\Request.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v2\src\Pipeline\GamePipelineTable.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Base\Pipeline\IInPipelineStageLists.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_2\src\DataManagement\ReferenceList.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_2\src\Data\modified_float_data.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Change\PrimitiveData.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Request\Request.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_2\src\Pipeline\GamePipelineTable.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Pipeline\IInPipelineStageLists.cs" />
      <Compile Include="Assets\Projects\MUtility\EnumerableUtility.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Base\Request\AddRequest.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Base\Pipeline\PipelineTag.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Base\Event\EffectProcessing.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Base\Event\Effect.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v2\src\Data1\PrimitiveData.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Base\Pipeline\IInPipelineStage.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Base\Change\PrimitiveChange.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Base\Event\IModifyChangeRequest.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Armor.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v2\src\Data\PrimitiveData.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v2\src\Pipeline\PipelineTag.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Base\Pipeline\GamePipelineTable.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Base\Event\SingleEffectProcessing.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v2\src\Pipeline\IInPipelineStage.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Vayne.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v2\src\Pipeline\PipelineElementLists.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\Base\Request\ChangeRequest.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1\src\EffectSystem1.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v2\src\Request\Request.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v2\src\Data\PrimitiveChange.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v2\src\Request\MagicDamageRequest.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Request\AddRequest.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Pipeline\PipelineTag.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Event\EffectProcessing.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Event\Effect.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_2\src\Data1\PrimitiveData.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Pipeline\IInPipelineStage.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Change\PrimitiveChange.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Event\IModifyChangeRequest.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Armor.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_2\src\Data\PrimitiveData.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_2\src\Pipeline\PipelineTag.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Pipeline\GamePipelineTable.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Event\SingleEffectProcessing.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_2\src\Pipeline\IInPipelineStage.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Vayne.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_2\src\Pipeline\PipelineElementLists.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Request\ChangeRequest.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_1\src\EffectSystem1.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_2\src\Request\Request.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_2\src\Data\PrimitiveChange.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v0_2\src\Request\MagicDamageRequest.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v1_0\Pipeline\IInPipelineStage.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v1_0\Pipeline\GamePipelineTable.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v1_0\Pipeline\PipelineTag.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v1_0\Pipeline\PipelineElementLists.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.12f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
