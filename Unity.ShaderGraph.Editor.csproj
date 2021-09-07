@@ -105,10 +105,10 @@
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Drawing\Blackboard\BlackboardFieldView.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Legacy\ILegacyTarget.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Input\Geometry\BitangentVectorNode.cs" />
-     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Drawing\Blackboard\SGBlackboard.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Generation\Enumerations\NormalDropOffSpace.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Drawing\Views\Slots\GradientSlotControlView.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Generation\Collections\PassCollection.cs" />
+     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Drawing\Blackboard\SGBlackboard.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Util\MessageManager.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Util\SerializationHelper.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Math\Vector\RotateAboutAxisNode.cs" />
@@ -146,9 +146,9 @@
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Drawing\INodeModificationListener.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Interfaces\IGeneratesBodyCode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Graphs\VectorShaderProperty.cs" />
-     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Input\Texture\SamplerStateNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Math\Wave\SawtoothWaveNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\FormerNameAttribute.cs" />
+     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Input\Texture\SamplerStateNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Generation\Enumerations\Cull.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Graphs\Matrix3ShaderProperty.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Drawing\Views\MaterialGraphView.cs" />
@@ -174,9 +174,9 @@
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Math\Trigonometry\ArccosineNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Procedural\Noise\VoronoiNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Generation\Contexts\TargetSetupContext.cs" />
-     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Input\Texture\Texture3DAssetNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Interfaces\IMayRequireCameraOpaqueTexture.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Artistic\Normal\NormalUnpackNode.cs" />
+     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Input\Texture\Texture3DAssetNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Generation\Collections\DependencyCollection.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Math\Vector\DotProductNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Serialization\FakeJsonObject.cs" />
@@ -496,8 +496,8 @@
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Input\Texture\SampleRawCubemapNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Generation\Descriptors\PragmaDescriptor.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Input\Texture\ProceduralVirtualTextureNode.cs" />
-     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Drawing\Interfaces\IResizable.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Interfaces\IMayRequireDepthTexture.cs" />
+     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Drawing\Interfaces\IResizable.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\UV\SpherizeNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Legacy\SpriteUnlitMasterNode1.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Graphs\ViewDirectionMaterialSlot.cs" />
@@ -581,11 +581,11 @@
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Util\KeywordDependentCollection.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Utility\RedirectNodeData.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Drawing\Views\PropertyNodeView.cs" />
-     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Math\Trigonometry\ArctangentNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Math\Wave\NoiseSineWaveNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Graphs\AbstractMaterialGraphAsset.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Drawing\Controls\ChannelEnumMaskControl.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Interface\IConditional.cs" />
+     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Math\Trigonometry\ArctangentNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Channel\CombineNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Drawing\Inspector\PropertyDrawers\Texture2DArrayPropertyDrawer.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@10.5.0\Editor\Data\Nodes\Input\Gradient\GradientNode.cs" />
