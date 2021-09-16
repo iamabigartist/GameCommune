@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 namespace RTSFramework_v1_0.Pipeline
@@ -33,6 +34,9 @@ namespace RTSFramework_v1_0.Pipeline
         /// </summary>
         static Dictionary<string, int> name_to_stage;
 
+        //
+        // static Dictionary<int, string> stage_to_pipeline_tag;
+
         static GamePipelineTable()
         {
             //Get current game pipeline arrangement, can differ from different game
@@ -60,7 +64,7 @@ namespace RTSFramework_v1_0.Pipeline
         }
 
         /// <summary>
-        /// The stage amount of the game
+        ///     The stage amount of the game
         /// </summary>
         public static int StageCount => depth_to_stage.Count;
 
