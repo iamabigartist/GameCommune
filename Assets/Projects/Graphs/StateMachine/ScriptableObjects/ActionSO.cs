@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine;
 namespace Graphs.StateMachine.ScriptableObjects
 {
     public abstract class ActionSO : ScriptableObject
@@ -8,7 +7,7 @@ namespace Graphs.StateMachine.ScriptableObjects
         {
             Action action = CreateAction();
             action.m_actionSO = this;
-            action.Initialize(stateMachine);
+            action.Initialize( stateMachine );
             return action;
         }
 
