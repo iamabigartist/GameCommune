@@ -1,4 +1,4 @@
-namespace RTSFramework_v1_0.DataBase
+namespace RTSFramework_v1_0.DataBase.Model
 {
     /// <summary>
     ///     A practical float data type that allow to be fine-grained edited and will provide a final <see cref="value" />

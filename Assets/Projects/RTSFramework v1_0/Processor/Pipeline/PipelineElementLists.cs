@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-namespace RTSFramework_v1_0.Pipeline
+namespace RTSFramework_v1_0.Processor.Pipeline
 {
     /// <summary>
     ///     A group of lists that store <see cref="TElement" />s of different pipeline stage.
@@ -19,23 +19,23 @@ namespace RTSFramework_v1_0.Pipeline
 
         List<TElement>[] lists;
         public List<TElement> this[int stage] => lists[stage];
-        // public List<TElement> this[TElement element]
-        // {
-        //     get
-        //     {
-        //         var list = this[element.GetStage()];
-        //         return list.Contains( element ) ? list : null;
-        //     }
-        // }
+        public List<TElement> this[TElement element]
+        {
+            get
+            {
+                var list = this[element.stage];
+                return list.Contains( element ) ? list : null;
+            }
+        }
 
         public void Add(TElement element)
         {
-            this[element.pipeline_tag.stage].Add( element );
+            this[element.stage].Add( element );
 
         }
         public bool Remove(TElement element)
         {
-            return this[element.pipeline_tag.stage].Remove( element );
+            return this[element.stage].Remove( element );
         }
     }
 }

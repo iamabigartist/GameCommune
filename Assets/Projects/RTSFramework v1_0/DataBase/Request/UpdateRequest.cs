@@ -1,4 +1,5 @@
-namespace RTSFramework_v1_0.DataBase
+using RTSFramework_v1_0.DataBase.Model;
+namespace RTSFramework_v1_0.DataBase.Request
 {
     public abstract class UpdateRequest<T> : Request
         where T : struct

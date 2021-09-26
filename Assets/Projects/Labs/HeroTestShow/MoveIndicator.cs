@@ -1,27 +1,30 @@
 using UnityEngine;
-public class MoveIndicator : MonoBehaviour
+namespace Labs.HeroTestShow
 {
-    public AnimationCurve m_curve;
-    float m_startTime;
-
-    void Start()
+    public class MoveIndicator : MonoBehaviour
     {
-        m_startTime = Time.time;
-    }
+        public AnimationCurve m_curve;
+        float m_startTime;
 
-    void Update()
-    {
-
-        while (true)
+        void Start()
         {
-            var cur_scale = m_curve.Evaluate( Time.time - m_startTime );
-            if (cur_scale == 0)
-            {
-                break;
-            }
-            transform.localScale = Vector3.one * cur_scale;
-            return;
+            m_startTime = Time.time;
         }
-        Destroy( this.gameObject );
+
+        void Update()
+        {
+
+            while (true)
+            {
+                var cur_scale = m_curve.Evaluate( Time.time - m_startTime );
+                if (cur_scale == 0)
+                {
+                    break;
+                }
+                transform.localScale = Vector3.one * cur_scale;
+                return;
+            }
+            Destroy( this.gameObject );
+        }
     }
 }

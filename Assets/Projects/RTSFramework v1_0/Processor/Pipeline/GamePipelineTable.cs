@@ -1,7 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-namespace RTSFramework_v1_0.Pipeline
+namespace RTSFramework_v1_0.Processor.Pipeline
 {
     public static class GamePipelineTable
     {
@@ -56,6 +55,7 @@ namespace RTSFramework_v1_0.Pipeline
 
             //Construct name to stage
             name_to_stage = pipeline_dict.ToDictionary( (pair) => pair.Key, (pair) => depth_to_stage[pair.Value] );
+
         }
 
         public static int GetPipelineStage(string pipeline_name)

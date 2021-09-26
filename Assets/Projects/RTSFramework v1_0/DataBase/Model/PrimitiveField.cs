@@ -1,4 +1,4 @@
-namespace RTSFramework_v1_0.DataBase
+namespace RTSFramework_v1_0.DataBase.Model
 {
     public class PrimitiveField<T> where T : struct
     {
