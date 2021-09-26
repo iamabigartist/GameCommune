@@ -6,11 +6,15 @@ namespace RTSFramework_v1_0.DataBase.Request
     /// </summary>
     public abstract class Request : IInPipelineStage
     {
-        protected Request(string pipeline_name)
+        protected Request(GamePipelineTable.Stage stage, IRequestFrom from)
         {
-            pipeline_tag = new PipelineTag( pipeline_name );
+            this.stage = stage;
+            this.from = from;
         }
-        public PipelineTag pipeline_tag { get; }
+        public GamePipelineTable.Stage stage { get; }
+        public IRequestFrom from { get; }
+        public abstract IRequestTo to { get; }
+
 
         /// <summary>
         ///     Execute this request right now.
@@ -18,4 +22,7 @@ namespace RTSFramework_v1_0.DataBase.Request
         public abstract void Process();
 
     }
+
+    public interface IRequestFrom { }
+    public interface IRequestTo { }
 }

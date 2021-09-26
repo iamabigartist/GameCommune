@@ -2,40 +2,46 @@ using System.Collections.Generic;
 namespace RTSFramework_v1_0.Processor.Pipeline
 {
     /// <summary>
-    ///     A group of lists that store <see cref="TElement" />s of different pipeline stage.
+    ///     A group of lists that store <see cref="TStageElement" />s of different pipeline stage.
     /// </summary>
-    /// <remarks>
-    ///     The pipeline stages number must be fixed by the <see cref="GamePipelineTable" /> before this
-    ///     <see cref="PipelineElementLists{TElement}" /> construct,
-    ///     and it can't be changed at runtime.
-    /// </remarks>
-    public class PipelineElementLists<TElement> where TElement : IInPipelineStage
+    public class PipelineElementLists<TStageElement> where TStageElement : IInPipelineStage
     {
         public PipelineElementLists()
         {
-            lists = new List<TElement>[GamePipelineTable.StageCount];
-            for (int i = 0; i < lists.Length; i++) { lists[i] = new List<TElement>(); }
+            lists = new List<TStageElement>[GamePipelineTable.StageCount];
+            for (int i = 0; i < lists.Length; i++) { lists[i] = new List<TStageElement>(); }
         }
 
-        List<TElement>[] lists;
-        public List<TElement> this[int stage] => lists[stage];
-        public List<TElement> this[TElement element]
+        List<TStageElement>[] lists;
+
+    #region Indexer
+
+        public List<TStageElement> this[GamePipelineTable.Stage stage] => lists[(int)stage];
+        public List<TStageElement> this[int stage] => lists[stage];
+        public List<TStageElement> this[TStageElement element]
         {
             get
             {
-                var list = this[element.stage];
+                var list = this[(int)element.stage];
                 return list.Contains( element ) ? list : null;
             }
         }
 
-        public void Add(TElement element)
+    #endregion
+
+    #region ListBehaviour
+
+        public void Add(TStageElement element)
         {
-            this[element.stage].Add( element );
+            this[(int)element.stage].Add( element );
 
         }
-        public bool Remove(TElement element)
+        public bool Remove(TStageElement element)
         {
-            return this[element.stage].Remove( element );
+            return this[(int)element.stage].Remove( element );
         }
+
+    #endregion
+
     }
 }

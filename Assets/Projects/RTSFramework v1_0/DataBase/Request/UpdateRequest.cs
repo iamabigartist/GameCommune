@@ -1,10 +1,14 @@
 using RTSFramework_v1_0.DataBase.Model;
+using RTSFramework_v1_0.Processor.Pipeline;
 namespace RTSFramework_v1_0.DataBase.Request
 {
     public abstract class UpdateRequest<T> : Request
         where T : struct
     {
-        protected UpdateRequest(string pipeline_name, PrimitiveField<T> target) : base( pipeline_name )
+        protected UpdateRequest(
+            GamePipelineTable.Stage stage,
+            IRequestFrom from,
+            PrimitiveField<T> target) : base( stage, from )
         {
             this.target = target;
         }
@@ -13,6 +17,7 @@ namespace RTSFramework_v1_0.DataBase.Request
         ///     The target that the change will be applied on
         /// </summary>
         protected PrimitiveField<T> target;
+        public override IRequestTo to => target;
 
         /// <summary>
         ///     Get the new stage by the update
@@ -25,7 +30,11 @@ namespace RTSFramework_v1_0.DataBase.Request
 
     public class ExampleAddRequest : UpdateRequest<float>
     {
-        public ExampleAddRequest(string pipeline_name, PrimitiveField<float> target, float addition) : base( pipeline_name, target )
+        public ExampleAddRequest(
+            GamePipelineTable.Stage stage,
+            IRequestFrom from,
+            PrimitiveField<float> target,
+            float addition) : base( stage, from, target )
         {
             this.addition = addition;
         }
