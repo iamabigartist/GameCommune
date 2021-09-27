@@ -58,7 +58,6 @@
      <Compile Include="Assets\Projects\Labs\TestFrames\TestEnum.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Event\EffectProcessing.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\ScriptableObjects\StateSO.cs" />
-     <Compile Include="Assets\Projects\RTSFramework v1_0\Processor\Event\EventTag.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0_2\src\Data1\PrimitiveData.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0_1\src\Base\Pipeline\IInPipelineStage.cs" />
      <Compile Include="Assets\Projects\RTSFramework v1_0\Processor\Pipeline\PipelineElementLists.cs" />
@@ -112,6 +111,8 @@
      <Compile Include="Assets\Projects\RTSFramework v0_2\src\Data\PrimitiveChange.cs" />
      <Compile Include="Assets\Projects\RTSFramework v0_2\src\Request\MagicDamageRequest.cs" />
      <Compile Include="Assets\Projects\RTSFramework v1_0\DataBase\Requests\UpdateRequest.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v1_0\DataBase\Model\Object.cs" />
+     <Compile Include="Assets\Projects\RTSFramework v1_0\Processor\Reference\IRef.cs" />
      <None Include="Assets\Projects\Graphs\StateMachine\Resources\StateMachineView.uss" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.12f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

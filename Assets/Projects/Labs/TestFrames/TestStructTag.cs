@@ -2,22 +2,21 @@ using System;
 using UnityEngine;
 namespace Labs.TestFrames
 {
-    public class EventRelation
+    public class AA
+    {
+
+    }
+    public class BB:AA
     {
 
     }
     public class TestStructTag : MonoBehaviour
     {
-        public static EventRelation to_relation;
-        public static EventRelation from_relation;
-        public static EventRelation other_relation;
-        static TestStructTag()
+        public BB bb;
+        void Start()
         {
-            to_relation = new EventRelation();
-            from_relation = new EventRelation();
-            other_relation = new EventRelation();
+            bb = new BB();
         }
-
         void OnGUI()
         {
         }
