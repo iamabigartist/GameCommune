@@ -1,6 +1,6 @@
 using RTSFramework_v1_0.DataBase.Model;
 using RTSFramework_v1_0.Processor.Pipeline;
-namespace RTSFramework_v1_0.DataBase.Request
+namespace RTSFramework_v1_0.DataBase.Requests
 {
     public abstract class UpdateRequest<T> : Request
         where T : struct

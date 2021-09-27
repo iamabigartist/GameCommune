@@ -8,7 +8,7 @@ namespace RTSFramework_v1_0.Processor.Reference
         {
             ref_lists = new List<RefList>();
         }
-        static void RemoveAllNull_AllList()
+        public static void RemoveAllNull_AllList()
         {
             foreach (RefList ref_list in ref_lists)
             {

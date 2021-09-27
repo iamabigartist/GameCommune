@@ -1,4 +1,4 @@
-namespace RTSFramework_v1_0.DataBase.Request
+namespace RTSFramework_v1_0.DataBase.Requests
 {
     public interface ICD_able<T>:IRequestTo
     {

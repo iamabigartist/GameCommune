@@ -1,6 +1,7 @@
 using System;
 namespace RTSFramework_v1_0.Processor.Event
 {
+    //TODO Not determined yet
     public struct EventTag
     {
         public enum Relation
