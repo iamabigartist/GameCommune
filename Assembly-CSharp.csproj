@@ -67,6 +67,7 @@
      <Compile Include="Assets\Projects\MMOBALibrary\BaseComponent\HitPoint.cs" />
      <Compile Include="Assets\Projects\MMOBALibrary\Damage\DamageEventArgs.cs" />
      <Compile Include="Assets\Projects\MMOBALibrary\Damage\DamageProcessor.cs" />
+     <Compile Include="Assets\Projects\MMOBALibrary\Data\modifiable_float.cs" />
      <Compile Include="Assets\Projects\MUtility\EnumerableUtility.cs" />
      <Compile Include="Assets\Projects\Labs\TestFrames\TestStructTag.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\State.cs" />

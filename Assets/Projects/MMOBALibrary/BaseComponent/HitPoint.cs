@@ -1,5 +1,6 @@
 using System;
 using MMOBALibrary.Damage;
+using MMOBALibrary.Data;
 using MMOBALibrary.Definitions;
 using UnityEngine;
 namespace MMOBALibrary.BaseComponent
@@ -12,18 +13,20 @@ namespace MMOBALibrary.BaseComponent
 
     #endregion
 
-    #region Configs
+    #region Data
 
-
-
+        public modifiable_float HP_capacity;
+        public float value;
+        public modifiable_float HP_regen;
+        
     #endregion
 
-    #region Data
+    #region InternalBehaviour
 
         
 
     #endregion
-
+        
     #region UnityEventHandler
 
         void Start()
