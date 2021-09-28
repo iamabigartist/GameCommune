@@ -1,3 +1,5 @@
+using System;
+using UnityEngine;
 namespace RTSFramework_v1_0.Processor.Reference
 {
 
@@ -29,10 +31,16 @@ namespace RTSFramework_v1_0.Processor.Reference
 
         public RefOf(IReferable source, bool temporary, T data)
         {
+
             this.source = source;
             this.temporary = temporary;
             this.data = data;
         }
+
+    }
+    public class HelpAttribute : Attribute
+
+    {
 
     }
 }
