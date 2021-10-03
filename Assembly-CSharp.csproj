@@ -52,35 +52,35 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Projects\Labs\TestFrames\TestChildComponent.cs" />
      <Compile Include="Assets\Projects\Labs\TestFrames\TestEnum.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\ScriptableObjects\StateSO.cs" />
      <Compile Include="Assets\Projects\Labs\TestFrames\Framer.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\ActionAttribute.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\DecisionAttribute.cs" />
+     <Compile Include="Assets\Projects\MMOBALibrary\Data\modifiable_float.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\ScriptableObjects\StateMachineSO.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\ScriptableObjects\ActionSO.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\IStateComponent.cs" />
-     <Compile Include="Assets\Projects\Graphs\StateMachine\Condition.cs" />
-     <Compile Include="Assets\Projects\Labs\HeroTestShow\MoveIndicator.cs" />
-     <Compile Include="Assets\Projects\Graphs\StateMachine\Action.cs" />
-     <Compile Include="Assets\Projects\Graphs\StateMachine\StateMachine.cs" />
-     <Compile Include="Assets\Projects\MMOBALibrary\BaseComponent\HitPoint.cs" />
      <Compile Include="Assets\Projects\MMOBALibrary\Damage\DamageEventArgs.cs" />
      <Compile Include="Assets\Projects\MMOBALibrary\Damage\DamageProcessor.cs" />
-     <Compile Include="Assets\Projects\MMOBALibrary\Data\modifiable_float.cs" />
+     <Compile Include="Assets\Projects\Graphs\StateMachine\Condition.cs" />
+     <Compile Include="Assets\Projects\Labs\HeroTestShow\MoveIndicator.cs" />
+     <Compile Include="Assets\Projects\Labs\TestFrames\TestComponent.cs" />
+     <Compile Include="Assets\Projects\Graphs\StateMachine\Action.cs" />
+     <Compile Include="Assets\Projects\Graphs\StateMachine\StateMachine.cs" />
+     <Compile Include="Assets\Projects\MMOBALibrary\Definitions\EventTimePointType.cs" />
      <Compile Include="Assets\Projects\MUtility\EnumerableUtility.cs" />
      <Compile Include="Assets\Projects\Labs\TestFrames\TestStructTag.cs" />
+     <Compile Include="Assets\Projects\MMOBALibrary\BaseComponent\HitPoint.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\State.cs" />
      <Compile Include="Assets\Projects\Labs\HeroTestShow\TestHeroFSM.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\ScriptableObjects\DecisionSO.cs" />
      <Compile Include="Assets\Projects\Labs\HeroTestShow\MOBACamera.cs" />
+     <Compile Include="Assets\Projects\MMOBALibrary\Definitions\DamageType.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\Decision.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\Transition.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\Execution.cs" />
-     <Compile Include="Assets\Projects\Labs\TestFrames\TestComponent.cs" />
-     <Compile Include="Assets\Projects\Labs\TestFrames\TestChildComponent.cs" />
-     <Compile Include="Assets\Projects\MMOBALibrary\Definitions\DamageType.cs" />
-     <Compile Include="Assets\Projects\MMOBALibrary\Definitions\EventTimePointType.cs" />
      <None Include="Assets\Projects\Graphs\StateMachine\Resources\StateMachineView.uss" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.12f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -747,9 +747,6 @@
       <Project>{a6540ba2-ddd0-1125-f276-85fedcb18389}</Project>
       <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Projects\MMOBALibrary\Data" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
