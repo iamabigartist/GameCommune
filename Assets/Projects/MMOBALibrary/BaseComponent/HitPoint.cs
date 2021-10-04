@@ -18,6 +18,10 @@ namespace MMOBALibrary.BaseComponent
         public modifiable_float HP_capacity;
         public float value;
         public modifiable_float HP_regen;
+
+
+
+
         
     #endregion
 
