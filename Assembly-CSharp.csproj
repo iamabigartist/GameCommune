@@ -53,12 +53,12 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Projects\Labs\TestFrames\TestChildComponent.cs" />
+     <Compile Include="Assets\Projects\MMOBALibrary\Rule\HeroActionRule.cs" />
      <Compile Include="Assets\Projects\Labs\TestFrames\TestEnum.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\ScriptableObjects\StateSO.cs" />
      <Compile Include="Assets\Projects\Labs\TestFrames\Framer.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\ActionAttribute.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\DecisionAttribute.cs" />
-     <Compile Include="Assets\Projects\MMOBALibrary\BaseComponent\Hero.cs" />
      <Compile Include="Assets\Projects\MMOBALibrary\Data\modifiable_float.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\ScriptableObjects\StateMachineSO.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\ScriptableObjects\ActionSO.cs" />
@@ -71,13 +71,13 @@
      <Compile Include="Assets\Projects\Graphs\StateMachine\Action.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\StateMachine.cs" />
      <Compile Include="Assets\Projects\MMOBALibrary\Definitions\EventTimePointType.cs" />
-     <Compile Include="Assets\Projects\MMOBALibrary\Rule\HeroActionRule.cs" />
      <Compile Include="Assets\Projects\MUtility\EnumerableUtility.cs" />
      <Compile Include="Assets\Projects\Labs\TestFrames\TestStructTag.cs" />
      <Compile Include="Assets\Projects\MMOBALibrary\BaseComponent\HitPoint.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\State.cs" />
      <Compile Include="Assets\Projects\Labs\HeroTestShow\TestHeroFSM.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\ScriptableObjects\DecisionSO.cs" />
+     <Compile Include="Assets\Projects\MMOBALibrary\BaseComponent\Hero.cs" />
      <Compile Include="Assets\Projects\Labs\HeroTestShow\MOBACamera.cs" />
      <Compile Include="Assets\Projects\MMOBALibrary\Definitions\DamageType.cs" />
      <Compile Include="Assets\Projects\Graphs\StateMachine\Decision.cs" />
